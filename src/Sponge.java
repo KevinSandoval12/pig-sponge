@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Sponge {
 
   /*
@@ -33,8 +35,29 @@ public class Sponge {
 
   // Implement your solution here!
   public static String spongeCase(String sentence) {
-    return null;
-  }
+    String listOutput = "";
+    boolean check = false;
+    char[] charList = sentence.toCharArray();
+    for (int j = 0; j < charList.length; j++) {
+        if (charList[j] == ' ') {
+          listOutput += charList[j];
+          check = false;
+        }
+        else if (check == false){
+          check = true;
+          listOutput += Character.toLowerCase(charList[j]);
+
+        }
+        else if (check == true) {
+          check = false;
+          listOutput += Character.toUpperCase(charList[j]);
+
+
+        }
+      }
+      return listOutput;
+    }
+  // Time complexity: O(n)
 
 
   // Method to help with testing, you do not need to read this.

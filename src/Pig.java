@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pig {
 
     /*
@@ -24,9 +27,27 @@ public class Pig {
         assertEqual(5, pigLatin("e"), "e");
     }
 
+// TUrn the string into array
+// .remove at 0 index
+// .push() at the back
+// have if statement that check if its a vowels
+
+// (a, e, i, o, or u)
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        return null;
+        String str = "";
+        for (int i = 0; i < sentence.length(); i++) {
+            if (sentence.charAt(i) == 'a' || sentence.charAt(i) == 'e' || sentence.charAt(i) == 'i' || sentence.charAt(i) == 'o' || sentence.charAt(i) == 'u') {
+                
+                str += sentence.substring(1, sentence.length());
+            }
+            if (i+1  != ' '){        
+            
+                str += sentence.substring(0, 1) + "ay";
+            }
+        }       
+
+        return str;
     }
 
 
